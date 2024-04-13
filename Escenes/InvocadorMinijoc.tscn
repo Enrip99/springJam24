@@ -763,6 +763,7 @@ animations = [ {
 
 [node name="Objecte collisio" type="Node2D"]
 position = Vector2( 344, 382 )
+z_index = 3
 script = ExtResource( 4 )
 minijoc = ExtResource( 3 )
 tempsTotal = 15.0
@@ -782,7 +783,7 @@ texture = ExtResource( 2 )
 position = Vector2( -3, -98 )
 frames = SubResource( 18 )
 animation = "IconA"
-frame = 6
+frame = 10
 playing = true
 
 [connection signal="body_entered" from="Area collisio" to="." method="_on_Area_collisio_body_entered"]

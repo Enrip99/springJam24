@@ -25,6 +25,10 @@ func _process(_delta):
 		sprite.animation = "Walk";
 	else:
 		sprite.animation = "Idle";
+	if position.y < 420:
+		z_index = 0;
+	else:
+		z_index = 2;
 
 
 func _physics_process(_delta):

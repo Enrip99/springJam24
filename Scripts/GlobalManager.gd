@@ -24,6 +24,7 @@ func _ready():
 	vides = videsInicials;
 	textePuntuacio.text = placeholderPunts + String(String(totalscore)).pad_zeros(4);
 	texteVides.text = placeholderVides + String(vides);
+	randomize();
 
 
 #func _process(delta):
