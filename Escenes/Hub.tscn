@@ -85,13 +85,16 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Origen" type="Node2D"]
+[node name="Origen" type="Node"]
 script = ExtResource( 3 )
 
 [node name="Jugador" type="KinematicBody2D" parent="."]
 position = Vector2( 506, 486 )
 collision_mask = 2
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
 velocitat = 2.5
 
 [node name="CollisioJugador" type="CollisionShape2D" parent="Jugador"]
@@ -154,25 +157,25 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Marcador" type="Label" parent="."]
+margin_left = 10.0
+margin_right = 153.0
+margin_bottom = 141.0
+theme = ExtResource( 6 )
+text = "Punts: 0000"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Vides" type="Label" parent="."]
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-margin_right = 300.0
+margin_right = -10.0
 margin_bottom = 141.0
-alignment = 2
-
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
-margin_right = 148.0
-margin_bottom = 141.0
+grow_horizontal = 0
 theme = ExtResource( 6 )
-custom_constants/shadow_as_outline = 10
-text = "prova!"
-
-[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer"]
-margin_left = 152.0
-margin_right = 300.0
-margin_bottom = 141.0
-theme = ExtResource( 6 )
-text = "prova!"
+text = "Vides: 5"
+align = 2
+__meta__ = {
+"_edit_lock_": true
+}
