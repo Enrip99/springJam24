@@ -49,6 +49,7 @@ func _input(event):
 			get_parent().add_child(MJinstancia);
 			MJinstancia.scale = Vector2(0,0);
 			MJinstancia.position = position;
+			MJinstancia.z_index = 4;
 # warning-ignore:return_value_discarded
 			MJinstancia.connect("minigame_end", self, "_on_minigame_end");
 			var tweenScale = get_tree().create_tween();

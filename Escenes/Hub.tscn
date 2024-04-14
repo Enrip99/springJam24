@@ -107,7 +107,7 @@ position = Vector2( 0, -90 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 2403 )
 animation = "Idle"
-frame = 1
+frame = 3
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -161,14 +161,23 @@ position = Vector2( 772, 450 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ColisioTaula" type="StaticBody2D" parent="Fons/Taula"]
 position = Vector2( -739, -426 )
 collision_layer = 2
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="poligon taula" type="CollisionPolygon2D" parent="Fons/Taula/ColisioTaula"]
 polygon = PoolVector2Array( 533, 372, 861, 370, 987, 592, 889, 594, 909, 642, 765, 646, 719, 602, 627, 602 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Marcador" type="Label" parent="."]
 margin_left = 10.0

@@ -8,6 +8,7 @@ var totalscore = 0;
 var vides: int;
 export var videsInicials: int = 5
 
+
 func _addScore(score):
 	if score == 0:
 		vides -= 1;

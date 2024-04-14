@@ -28,7 +28,10 @@ func _process(delta):
 
 
 func _on_CafeAmbLlet_acabat():
-	score = clamp(0, 100, 100 - (abs(int(lletDemanada - lletVertida)) * 10));
+	#score = clamp(100 - (abs(lletDemanada - lletVertida) * 20), 0, 100);
+	#print(100 - (abs(lletDemanada - lletVertida) * 20), " - " , lletDemanada, " - ", lletVertida)
+	var temp = abs (lletDemanada - lletVertida) * 5;
+	score = int (max (0, 100 - temp));
 	if score > 0:
 		$ParticulesFiMinijoc.emitting = true
 	emit_signal("minigame_end", score);

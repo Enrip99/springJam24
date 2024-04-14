@@ -1,0 +1,10 @@
+Font Tequila per uZiM, d'us lliure.
+Icones de teclat i ratolí per Kenney, CC0 1.0.
+Totes les imatges dibuixades i fotografiades per mi.
+Tot el codi escrit per mi.
+Software usat:
+	Godot 3.5.1
+	GIMP 2.8.16
+	Lubuntu 16.04.7
+Desenvolupat per a la SpringJam2024 organitzada per VGAFIB.
+Temàtica: "Fins a l'ultim detall"
