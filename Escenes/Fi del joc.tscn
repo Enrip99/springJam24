@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/Tequila/TemaTequila.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/Fi_del_joc.gd" type="Script" id=2]
+[ext_resource path="res://Imatges/Altres/PantallaTitol.png" type="Texture" id=3]
+
+[node name="Fi del joc" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -328.0
+margin_top = -340.0
+margin_right = 328.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 656.0
+margin_bottom = 141.0
+text = "Fi del joc!"
+align = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 145.0
+margin_right = 656.0
+margin_bottom = 292.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Tornar al menu principal"
+
+[node name="PantallaTitol" type="Sprite" parent="."]
+z_index = -1
+texture = ExtResource( 3 )
+centered = false
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]

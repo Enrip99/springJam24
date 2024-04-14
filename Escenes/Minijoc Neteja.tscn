@@ -1,0 +1,129 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Imatges/Neteja/Taula.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Minijoc Neteja.gd" type="Script" id=2]
+[ext_resource path="res://Imatges/Neteja/MaAmbMocador.png" type="Texture" id=3]
+[ext_resource path="res://Escenes/ParticulesFiMinijoc.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Imatges/Neteja/Taca1.png" type="Texture" id=5]
+[ext_resource path="res://Imatges/Neteja/Taca2.png" type="Texture" id=6]
+[ext_resource path="res://Imatges/Neteja/Taca3.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Taca.gd" type="Script" id=8]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 240.208
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 358.857, 201.525 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 191.638
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 166.208
+
+[node name="Minijoc Neteja" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Fons" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Taques" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Taca0" type="Sprite" parent="Taques"]
+position = Vector2( -100, 0 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+script = ExtResource( 8 )
+
+[node name="Area2D" type="Area2D" parent="Taques/Taca0"]
+collision_layer = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Taques/Taca0/Area2D"]
+position = Vector2( 0, 20 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Taca1" type="Sprite" parent="Taques"]
+position = Vector2( 180, -120 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+script = ExtResource( 8 )
+
+[node name="Area2D" type="Area2D" parent="Taques/Taca1"]
+scale = Vector2( 1, 1 )
+collision_layer = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Taques/Taca1/Area2D"]
+position = Vector2( -38.75, -31.25 )
+rotation = -0.785398
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Taca2" type="Sprite" parent="Taques"]
+position = Vector2( 10, -27 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+script = ExtResource( 8 )
+
+[node name="Area2D" type="Area2D" parent="Taques/Taca2"]
+scale = Vector2( 1, 1 )
+collision_layer = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Taques/Taca2/Area2D"]
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MaAmbMocador" type="Sprite" parent="."]
+position = Vector2( 64, 20 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+offset = Vector2( 590, -280 )
+
+[node name="Area2D" type="Area2D" parent="MaAmbMocador"]
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MaAmbMocador/Area2D"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ParticulesFiMinijoc" parent="." instance=ExtResource( 4 )]
+z_index = 4
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="cleaned" from="Taques/Taca0" to="." method="_on_Taca_cleaned"]
+[connection signal="area_entered" from="Taques/Taca0/Area2D" to="Taques/Taca0" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Taques/Taca0/Area2D" to="Taques/Taca0" method="_on_Area2D_area_exited"]
+[connection signal="cleaned" from="Taques/Taca1" to="." method="_on_Taca_cleaned"]
+[connection signal="area_entered" from="Taques/Taca1/Area2D" to="Taques/Taca1" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Taques/Taca1/Area2D" to="Taques/Taca1" method="_on_Area2D_area_exited"]
+[connection signal="cleaned" from="Taques/Taca2" to="." method="_on_Taca_cleaned"]
+[connection signal="area_entered" from="Taques/Taca2/Area2D" to="Taques/Taca2" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Taques/Taca2/Area2D" to="Taques/Taca2" method="_on_Area2D_area_exited"]

@@ -12,7 +12,7 @@ var currentXpos;
 var canHold = true;
 
 
-func on_Cirera_acabat():
+func on_Quadre_acabat():
 	var temp = abs (quadre.rotation_degrees) * 50;
 	score = int (max (0, 100 - temp));
 	if score > 0:
@@ -56,4 +56,4 @@ func _input(event):
 		ma.visible = true;
 		maQuadre.visible = false;
 		get_viewport().warp_mouse(maQuadre.global_position);
-		on_Cirera_acabat()
+		on_Quadre_acabat()

@@ -66,8 +66,8 @@ func _on_minigame_end(score):
 
 func allibera():
 	jugant = false;
-	emit_signal("allowMovement");
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE);
+	emit_signal("allowMovement");
 
 
 func _on_Area_collisio_body_entered(_body):
