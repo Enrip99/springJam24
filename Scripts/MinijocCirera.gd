@@ -7,7 +7,7 @@ var score = 0;
 
 func _on_Cirera_acabat():
 	if dins:
-		score = max(10, int(100 - $Cirera.position.distance_to($Area2D.position)/2));
+		score = max(10, int(100 - $Cirera.position.distance_to($AreaPastis.position)/2));
 		$ParticulesFiMinijoc.emitting = true
 	emit_signal("minigame_end", score);
 

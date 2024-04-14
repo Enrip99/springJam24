@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Escenes/ParticulesFiMinijoc.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Imatges/Quadre/FonsQuadre.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/MinijocQuadre.gd" type="Script" id=3]
+[ext_resource path="res://Imatges/Quadre/BraçMaOberta.png" type="Texture" id=4]
+[ext_resource path="res://Imatges/Quadre/MarcQuadre.png" type="Texture" id=5]
+[ext_resource path="res://Imatges/Quadre/BraçSostenint.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 179.5, 10 )
+
+[node name="MinijocQuadre" type="Node2D"]
+script = ExtResource( 3 )
+velocitat = 0.025
+
+[node name="FonsQuadre" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Quadre" type="Node2D" parent="."]
+position = Vector2( 0, -148 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ImatgeQuadre" type="Sprite" parent="Quadre"]
+position = Vector2( -4, 149 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BraçSostenint" type="Sprite" parent="Quadre"]
+position = Vector2( 0, 298.657 )
+rotation = 0.0698132
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 6 )
+offset = Vector2( 700, 271 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Quadre"]
+input_pickable = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Quadre/KinematicBody2D"]
+position = Vector2( -2.5, 290 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ma" type="Sprite" parent="."]
+position = Vector2( 272, 45 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 4 )
+offset = Vector2( 360, 625 )
+
+[node name="ParticulesFiMinijoc" parent="." instance=ExtResource( 1 )]
+z_index = 4
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="input_event" from="Quadre/KinematicBody2D" to="." method="_on_KinematicBody2D_input_event"]

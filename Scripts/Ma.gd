@@ -1,6 +1,6 @@
 extends Node2D
 onready var escenaPare = $"..";
-func _process(delta):
+func _process(_delta):
 	position = escenaPare.get_local_mouse_position();
 	if Input.is_mouse_button_pressed( 1 ):
 		$SpriteMa.frame = 0;
