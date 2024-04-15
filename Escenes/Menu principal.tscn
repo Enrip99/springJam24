@@ -32,6 +32,15 @@ margin_bottom = 298.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Tancar joc"
 
+[node name="MillorPuntuacio" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 21.0
+margin_top = -271.0
+margin_right = 296.0
+text = "Record:
+1234 punts"
+
 [node name="PantallaTitol" type="Sprite" parent="."]
 z_index = -1
 texture = ExtResource( 2 )

@@ -16,6 +16,7 @@ func _addScore(score):
 		vides -= 1;
 		texteVides.text = placeholderVides + String(vides);
 		if vides == 0:
+			GlobalVars.set_score(totalscore);
 			get_tree().change_scene("res://Escenes/Fi del joc.tscn");
 	else:
 		totalscore += score;

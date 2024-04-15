@@ -22,7 +22,8 @@ margin_right = 328.0
 [node name="Label" type="Label" parent="VBoxContainer"]
 margin_right = 656.0
 margin_bottom = 141.0
-text = "Fi del joc!"
+grow_horizontal = 2
+text = "1412 punts - RECORD!"
 align = 1
 
 [node name="Button" type="Button" parent="VBoxContainer"]
